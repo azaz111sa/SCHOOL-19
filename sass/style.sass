@@ -1,0 +1,365 @@
+$color-primary: #FFA500
+$color-text: #333
+$color-bg: #fff
+$color-btn: #FF7F50
+$font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+$container-width: 1200px
+$breakpoint-mobile: 768px
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  font-family: $font-main
+  line-height: 1.6
+  color: $color-text
+  background-color: $color-bg
+
+.container
+  max-width: $container-width
+  margin: 0 auto
+  padding: 0 20px
+  @media (max-width: $breakpoint-mobile)
+    padding: 0 15px
+
+%section-padding
+  padding: 60px 0
+  @media (max-width: $breakpoint-mobile)
+    padding: 40px 0
+
+.btn
+  display: inline-block
+  padding: 12px 24px
+  background-color: $color-btn
+  color: white
+  text-decoration: none
+  border: none
+  border-radius: 6px
+  font-weight: bold
+  cursor: pointer
+  transition: background-color 0.3s ease
+  &:hover
+    background-color: darken($color-btn, 10%)
+  @media (max-width: $breakpoint-mobile)
+    padding: 10px 20px
+    font-size: 0.9rem
+
+.header
+  padding: 10px 0
+
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: $color-primary
+    padding: 10px 40px
+    border-radius: 8px
+    max-width: 1175px
+    margin: 0 auto
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+      gap: 15px
+      padding: 15px 20px
+      max-width: 90%
+      border-radius: 6px
+
+  &__logo
+    display: flex
+    align-items: center
+    gap: 10px
+    img
+      height: 40px
+    .header__school-name
+      font-weight: bold
+      color: white
+      font-size: 1.1rem
+
+  &__contact
+    display: flex
+    align-items: center
+    gap: 8px
+    color: white
+    svg
+      fill: white
+      width: 16px
+      height: 16px
+    .header__phone
+      color: white
+      text-decoration: none
+      font-weight: 500
+      &:hover
+        text-decoration: underline
+
+.programs
+  @extend %section-padding
+  &__container
+    display: flex
+    justify-content: space-between
+    gap: 30px
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+  &__text
+    flex: 1
+  &__title
+    font-size: 1.4rem
+    margin-bottom: 20px
+    color: $color-primary
+    @media (max-width: $breakpoint-mobile)
+      font-size: 1.2rem
+  &__list
+    list-style: none
+    margin-bottom: 25px
+    .programs__item
+      margin-bottom: 8px
+      padding-left: 20px
+      position: relative
+      &:before
+        content: "•"
+        position: absolute
+        left: 0
+        color: $color-primary
+  &__btn
+    @extend .btn
+  &__image
+    flex: 0 0 400px
+    img
+      width: 100%
+      height: auto
+      border-radius: 8px
+    @media (max-width: $breakpoint-mobile)
+      flex: 0 0 100%
+
+.welcome
+  @extend %section-padding
+  &__container
+    text-align: center
+  &__title
+    font-size: 1.6rem
+    margin-bottom: 30px
+    color: $color-primary
+    @media (max-width: $breakpoint-mobile)
+      font-size: 1.3rem
+  &__content
+    display: flex
+    gap: 30px
+    justify-content: center
+    align-items: flex-start
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+  &__photo
+    width: 200px
+    height: auto
+    border-radius: 8px
+    @media (max-width: $breakpoint-mobile)
+      width: 100%
+      max-width: 250px
+  &__text
+    max-width: 600px
+    text-align: left
+  &__greeting
+    font-size: 1.3rem
+    margin-bottom: 15px
+    color: $color-primary
+  p
+    margin-bottom: 15px
+    line-height: 1.7
+
+.history
+  @extend %section-padding
+  &__container
+    text-align: center
+  &__title
+    font-size: 1.6rem
+    margin-bottom: 30px
+    color: $color-primary
+    @media (max-width: $breakpoint-mobile)
+      font-size: 1.3rem
+  &__content
+    display: flex
+    gap: 30px
+    justify-content: center
+    align-items: flex-start
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+  &__text
+    max-width: 600px
+    text-align: left
+    p
+      margin-bottom: 15px
+      line-height: 1.7
+  &__image
+    width: 100%
+    max-width: 600px
+    height: auto
+    border-radius: 8px
+
+// Наши достижения — фоновая картинка, ограничена до 1175px
+.achievements
+  @extend %section-padding
+  padding: 60px 0 80px 0
+  @media (max-width: $breakpoint-mobile)
+    padding: 40px 0 60px 0
+
+  &__bg-container
+    max-width: 1175px
+    margin: 0 auto
+    padding: 40px 30px
+    background-color: $color-primary
+    background-image: url('img/yellow-orange-abstract-fluid-background-for-banner-poster-presentation-brochure-cover-vector 1.png')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    border-radius: 8px
+    @media (max-width: $breakpoint-mobile)
+      padding: 30px 20px
+      max-width: 90%
+      border-radius: 6px
+
+  &__container
+    text-align: center
+    position: relative
+    z-index: 1
+  &__title
+    font-size: 1.6rem
+    margin-bottom: 30px
+    color: #fff
+    @media (max-width: $breakpoint-mobile)
+      font-size: 1.3rem
+  &__content
+    display: flex
+    gap: 30px
+    justify-content: center
+    align-items: flex-start
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+  &__item
+    display: flex
+    gap: 20px
+    align-items: flex-start
+    max-width: 500px
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+      gap: 15px
+  &__photo
+    width: 150px
+    height: auto
+    border-radius: 8px
+    @media (max-width: $breakpoint-mobile)
+      width: 100%
+      max-width: 200px
+  &__text
+    flex: 1
+    background-color: rgba(255, 255, 255, 0.9)
+    padding: 15px
+    border-radius: 8px
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1)
+    line-height: 1.6
+    color: $color-text
+
+// Контакты — карта СПРАВА от текста
+.contacts
+  @extend %section-padding
+  &__container
+    text-align: center
+  &__title
+    font-size: 1.6rem
+    margin-bottom: 30px
+    color: $color-primary
+    @media (max-width: $breakpoint-mobile)
+      font-size: 1.3rem
+  &__content
+    display: flex
+    gap: 30px
+    justify-content: center
+    align-items: flex-start
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+      gap: 20px
+  &__info
+    flex: 1
+    max-width: 400px
+    text-align: left
+    p
+      margin-bottom: 10px
+      line-height: 1.6
+    ul
+      list-style: none
+      padding-left: 0
+      margin-bottom: 15px
+      li
+        margin-bottom: 5px
+        position: relative
+        padding-left: 20px
+        &:before
+          content: "•"
+          position: absolute
+          left: 0
+          color: $color-primary
+  &__map
+    flex: 0 0 400px
+    img
+      width: 100%
+      height: auto
+      border-radius: 8px
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1)
+    @media (max-width: $breakpoint-mobile)
+      flex: 0 0 100%
+
+// Footer — урезан до 1175px
+.footer
+  padding: 30px 0
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: $color-primary
+    padding: 10px 45px
+    border-radius: 8px
+    max-width: 1175px
+    margin: 0 auto
+    @media (max-width: $breakpoint-mobile)
+      flex-direction: column
+      gap: 15px
+      padding: 15px 20px
+      max-width: 90%
+      border-radius: 6px
+  &__logo
+    display: flex
+    align-items: center
+    gap: 10px
+    img
+      height: 30px
+    .footer__school-name
+      font-weight: bold
+      color: white
+      font-size: 1rem
+  &__contact
+    display: flex
+    align-items: center
+    gap: 8px
+    color: white
+    svg
+      fill: white
+      width: 16px
+      height: 16px
+    .footer__phone
+      color: white
+      text-decoration: none
+      font-weight: 500
+      &:hover
+        text-decoration: underline
+  &__btn
+    .btn
+      padding: 10px 20px
+      font-size: 0.9rem
+      @media (max-width: $breakpoint-mobile)
+        width: 100%
+        text-align: center
+  &__copyright
+    color: white
+    font-size: 0.9rem
+    text-align: center
+    @media (max-width: $breakpoint-mobile)
+      width: 100%
